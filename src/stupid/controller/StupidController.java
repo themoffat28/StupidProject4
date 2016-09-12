@@ -48,7 +48,7 @@ public class StupidController
 		
 		System.out.println("What do you call a computer that can sing?");
 		String jokeInput = inputReader.next();
-		System.out.println("No, A Dell");
+		System.out.println(jokeInput + "? No, A Dell");
 		inputReader.nextLine();
 		
 		System.out.println("What kind of shoes do you wear?");
