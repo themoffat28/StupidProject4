@@ -24,7 +24,11 @@ public class StupidController
 	{
 		System.out.println("How is your day?");
 		String dayInput = inputReader.next(); 
-		System.out.println("Oh, you're having a " + dayInput + " day?");
+		if(dayInput.equals("bad"))
+		{
+			System.out.println("Im sorry your day wasn't the best...");
+		}
+		else System.out.println("Oh, you're having a " + dayInput + " day?");
 		inputReader.nextLine(); // Consumes unneeded input text.
 		
 		System.out.println("My next question is: What do you think is the best type of food?");
