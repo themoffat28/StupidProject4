@@ -24,16 +24,22 @@ public class StupidController
 	{
 		System.out.println("How is your day?");
 		String dayInput = inputReader.next(); 
-		if(dayInput.equals("bad"))
+		if(dayInput.equalsIgnoreCase("bad") || dayInput.equalsIgnoreCase("not good") || dayInput.equalsIgnoreCase("not too good") || dayInput.equalsIgnoreCase("not too great") || dayInput.equalsIgnoreCase("not the best") || dayInput.equalsIgnoreCase("terrible"))
 		{
 			System.out.println("Im sorry your day wasn't the best...");
 		}
-		else System.out.println("Oh, you're having a " + dayInput + " day?");
+		else System.out.println("Im glad your day is " + dayInput + ("."));
 		inputReader.nextLine(); // Consumes unneeded input text.
 		
-		System.out.println("My next question is: What do you think is the best type of food?");
-		String foodInput = inputReader.next();
-		System.out.println("Really? " + foodInput + " is my favorite type of food too!");
+		System.out.println("Do you have a favorite type of food?");
+		String foodAnswer = inputReader.next();
+		if (foodAnswer.equalsIgnoreCase("yes"))
+		{
+			System.out.println("What is it?");
+			String foodInput = inputReader.next();
+			System.out.println("Really? " + foodInput + " is my favorite type of food too!");
+		}
+		else System.out.println("Well thats lame!");
 		inputReader.nextLine();
 		
 		System.out.println("How old are you?");
