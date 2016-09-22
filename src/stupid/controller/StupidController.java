@@ -24,7 +24,7 @@ public class StupidController
 	{
 		System.out.println("How is your day?");
 		String dayInput = inputReader.next(); 
-		if(dayInput.equalsIgnoreCase("bad") || dayInput.equalsIgnoreCase("not good") || dayInput.equalsIgnoreCase("not too good") || dayInput.equalsIgnoreCase("not too great") || dayInput.equalsIgnoreCase("not the best") || dayInput.equalsIgnoreCase("terrible"))
+		if(dayInput.equalsIgnoreCase("bad") || dayInput.equalsIgnoreCase("not good") || dayInput.equalsIgnoreCase("not too good") || dayInput.equalsIgnoreCase("not too great") || dayInput.equalsIgnoreCase("not the best") || dayInput.equalsIgnoreCase("terrible") || dayInput.equalsIgnoreCase("no"))
 		{
 			System.out.println("Im sorry your day wasn't the best...");
 		}
@@ -44,15 +44,15 @@ public class StupidController
 		//--------------------------------------------------------
 		System.out.println("How old are you?");
 		int ageInput = inputReader.nextInt();
-		if(ageInput < 100)
+		if(ageInput > 100)
 		{
 			System.out.println("I think you're lying.");
 		}
-		if(ageInput > 5)
+		if(ageInput <= 5)
 		{
 			System.out.println("Where are your parents?");
 		}
-		if(ageInput < 80)
+		if(ageInput > 80)
 		{
 			System.out.println("Welcome old timer / more wiser!");
 		}
@@ -61,12 +61,37 @@ public class StupidController
 		//--------------------------------------------------------
 		System.out.println("On a scale of 1-10 how hot do you look today?");
 		float hotnessInput = inputReader.nextFloat();
-		System.out.println(hotnessInput + " is just alright compared to me ;)");
+		if(hotnessInput < 5.0)
+		{
+			System.out.println("I think you're being a little too hard on yourself...");
+		}
+		if(hotnessInput > 10.0)
+		{
+			System.out.println("Woah, settle down there pal!");
+		}
+		if(hotnessInput > 5.1)
+			if(hotnessInput < 9.9)
+		{	
+			System.out.println(hotnessInput + " is just alright compared to me ;)");
+		}	
 		inputReader.nextLine();
 		//--------------------------------------------------------
-		System.out.println("What do you call a computer that can sing?");
-		String jokeInput = inputReader.next();
-		System.out.println(jokeInput + "? No, A Dell");
+		System.out.println("Do you want to hear a joke?");
+		String jokeAccept = inputReader.next();
+		if(jokeAccept.equalsIgnoreCase("yes") || jokeAccept.equalsIgnoreCase("sure") || jokeAccept.equalsIgnoreCase("yeah") || jokeAccept.equalsIgnoreCase("definatley") || jokeAccept.equalsIgnoreCase("heck yes") || jokeAccept.equalsIgnoreCase("heck yeah")) 
+				{
+			System.out.println("What do you call a computer that can sing?");
+			String jokeInput = inputReader.next();
+			if(jokeInput.equalsIgnoreCase("adell") || jokeInput.equalsIgnoreCase("a dell"))
+			{
+				System.out.println("Wow... you got me. That was my best joke...");
+			}
+			else System.out.println(jokeInput + "? Nope! A Dell :)");
+				}
+		if(jokeAccept.equalsIgnoreCase("no") || jokeAccept.equalsIgnoreCase("no thanks") || jokeAccept.equalsIgnoreCase("eh") || jokeAccept.equalsIgnoreCase("definatley not"))
+		{
+			System.out.println("Tough crowd...");
+		}
 		inputReader.nextLine();
 		//--------------------------------------------------------
 		System.out.println("What kind of shoes do you wear?");
